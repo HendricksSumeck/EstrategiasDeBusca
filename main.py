@@ -15,35 +15,40 @@ import ASearch as ae
 import time
 import timeit
 
-cidadeComeco = "JoaoPessoa"
-cidadeFim = 'Belem'
+cidadeComeco = "SaoPaulo"
+cidadeFim = 'RioBranco'
 
 graph, heuristics = gg.graph_generetor(cidadeFim)
 
+print("Busca em profundidade")
 inicio = timeit.default_timer()
 print(dp.depth_first_search(graph, cidadeComeco, cidadeFim))
 fim = timeit.default_timer()
 print ('duracao: %f' % (fim - inicio))
 print()
 
+print("Busca em Largura")
 inicio = timeit.default_timer()
 print(bff.breadth_first_search(graph, cidadeComeco, cidadeFim))
 fim = timeit.default_timer()
 print ('duracao: %f' % (fim - inicio))
 print()
 
+print("Busca de custo uniforme")
 inicio = timeit.default_timer()
 print(uc.uniform_cost_search(graph, cidadeComeco, cidadeFim))
 fim = timeit.default_timer()
 print ('duracao: %f' % (fim - inicio))
 print()
 
+print("Busca gulosa")
 inicio = timeit.default_timer()
 print(bf.best_first_search(graph, heuristics, cidadeComeco, cidadeFim))
 fim = timeit.default_timer()
 print ('duracao: %f' % (fim - inicio))
 print()
 
+print("Busca A*")
 inicio = timeit.default_timer()
 print(ae.a_search(graph, heuristics, cidadeComeco, cidadeFim))
 fim = timeit.default_timer()
