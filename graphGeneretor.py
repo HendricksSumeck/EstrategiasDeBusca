@@ -6,8 +6,9 @@ Created on Mon Mar 22 19:51:51 2021
 """
 
 import graph as gp
-
-def graph_generetor():
+import pandas as pd 
+    
+def graph_generetor(end):
     
     # Instancia o grago
     graph = gp.Graph()
@@ -50,37 +51,43 @@ def graph_generetor():
     graph.connect('BeloHorizonte', 'SaoPaulo', 586)
     graph.connect('BeloHorizonte', 'RioDeJaneiro', 434)
     
+    # making dataframe 
+    df = pd.read_csv("DistanciaDasCidades.csv") 
+    
+    # Trasformar as cidades em index
+    df.set_index("Cidades",inplace=True)
+    
     # Trasforma o grafo unidiricionalmente
     graph.make_undirected()
     
     # Criar as heurística (distância em linha reta, distância de viagem aérea)
     heuristics = {}
-    heuristics['BoaVista'] = 1335
-    heuristics['Manaus'] = 761
-    heuristics['RioBranco'] = 449
-    heuristics['PortoVelho'] = 0
-    heuristics['Belem'] = 1886
-    heuristics['Macapa'] = 1724
-    heuristics['Cuiaba'] = 1137
-    heuristics['CampoGrande'] = 1634
-    heuristics['Curitiba'] = 2412
-    heuristics['Florianopolis'] = 2641
-    heuristics['PortoAlegre'] = 2706
-    heuristics['SaoPaulo'] = 2463
-    heuristics['RioDeJaneiro'] = 2707
-    heuristics['Vitoria'] = 2835
-    heuristics['Salvador'] = 2808
-    heuristics['Aracaju'] = 2946
-    heuristics['Maceio'] = 3090
-    heuristics['Recife'] = 3190
-    heuristics['Natal'] = 3179
-    heuristics['JoaoPessoa'] = 3200
-    heuristics['Fortaleza'] = 2855
-    heuristics['SaoLuis'] = 2274
-    heuristics['Brasilia'] = 1900
-    heuristics['BeloHorizonte'] = 2477
-    heuristics['Goiania'] = 1813
-    heuristics['Palmas'] = 1711
-    heuristics['Teresina'] = 2362
+    heuristics['BoaVista'] = df.loc[end, 'BoaVista']
+    heuristics['Manaus'] = df.loc[end, 'Manaus']
+    heuristics['RioBranco'] = df.loc[end, 'RioBranco']
+    heuristics['PortoVelho'] = df.loc[end, 'PortoVelho']
+    heuristics['Belem'] = df.loc[end, "Belem"]
+    heuristics['Macapa'] = df.loc[end, 'Macapa']
+    heuristics['Cuiaba'] = df.loc[end, 'Cuiaba']
+    heuristics['CampoGrande'] = df.loc[end, 'CampoGrande']
+    heuristics['Curitiba'] = df.loc[end, 'Curitiba']
+    heuristics['Florianopolis'] = df.loc[end, 'Florianopolis']
+    heuristics['PortoAlegre'] = df.loc[end, 'PortoAlegre']
+    heuristics['SaoPaulo'] = df.loc[end, 'SaoPaulo']
+    heuristics['RioDeJaneiro'] = df.loc[end, 'RioDeJaneiro']
+    heuristics['Vitoria'] = df.loc[end, 'Vitoria']
+    heuristics['Salvador'] = df.loc[end, 'Salvador']
+    heuristics['Aracaju'] = df.loc[end, 'Maceio']
+    heuristics['Maceio'] = df.loc[end, "Belem"]
+    heuristics['Recife'] = df.loc[end, 'Recife']
+    heuristics['Natal'] = df.loc[end, 'Natal']
+    heuristics['JoaoPessoa'] = df.loc[end, 'JoaoPessoa']
+    heuristics['Fortaleza'] = df.loc[end, 'Fortaleza']
+    heuristics['SaoLuis'] = df.loc[end, 'SaoLuis']
+    heuristics['Brasilia'] = df.loc[end, 'Brasilia']
+    heuristics['BeloHorizonte'] = df.loc[end, 'BeloHorizonte']
+    heuristics['Goiania'] = df.loc[end, 'Goiania']
+    heuristics['Palmas'] = df.loc[end, 'Palmas']
+    heuristics['Teresina'] = df.loc[end, 'Teresina']
     
     return graph, heuristics
