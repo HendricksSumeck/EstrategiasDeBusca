@@ -7,10 +7,15 @@ Created on Mon Mar 22 19:22:00 2021
 
 from node import Node
 from graph import Graph
+import matplotlib.pyplot as plt
+import networkx as nx
 
 # Busca A*
 def a_search(graph, heuristics, start, end):
     
+    # Cria variaveis do grafo
+    G = nx.Graph()
+    edgelist = []
     # Create lists for open nodes and closed nodes
     open = []
     closed = []
@@ -26,7 +31,6 @@ def a_search(graph, heuristics, start, end):
         open.sort()
         # Get the node with the lowest cost
         current_node = open.pop(0)
-        print(current_node.name)
         # Add the current node to the closed list
         closed.append(current_node)
         
@@ -47,6 +51,9 @@ def a_search(graph, heuristics, start, end):
             neighbor = Node(key, current_node)
             # Check if the neighbor is in the closed list
             if(neighbor in closed):
+                # Relaciona truplas dos grafos
+                edgetruple = (current_node.name, neighbor.name)
+                edgelist.append(edgetruple)
                 continue
             # Calculate full path cost
             neighbor.g = current_node.g + graph.get(current_node.name, neighbor.name)
@@ -56,6 +63,21 @@ def a_search(graph, heuristics, start, end):
             if(add_to_open(open, neighbor) == True):
                 # Everything is green, add neighbor to open list
                 open.append(neighbor)
+                G.add_edge(current_node.name, neighbor.name)
+        # define o posicionamento do grafo
+        pos = nx.spring_layout(G)
+        nx.draw(G, pos, font_size=16, with_labels=False)
+        # nodes
+        options = {"node_size": 500, "alpha": 0.8}
+        nx.draw_networkx_nodes(G, pos, nodelist=[start_node.name], node_color="g", **options)
+        if(goal_node in open):
+            nx.draw_networkx_nodes(G, pos, nodelist=[goal_node.name], node_color="b", **options)
+        # edge
+        nx.draw_networkx_edges(G, pos, edgelist=edgelist, width=2, alpha=0.5, edge_color="r")
+        # Plot grafo
+        nx.draw_networkx_labels(G, pos)
+        plt.axis("off")
+        plt.show()
     # Return None, no path is found
     return None
 
