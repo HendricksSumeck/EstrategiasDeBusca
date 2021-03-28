@@ -26,6 +26,7 @@ def a_search(graph, heuristics, start, end):
         open.sort()
         # Get the node with the lowest cost
         current_node = open.pop(0)
+        print(current_node.name)
         # Add the current node to the closed list
         closed.append(current_node)
         

@@ -7,26 +7,29 @@ Created on Mon Mar 22 19:23:32 2021
 
 from node import Node
 from graph import Graph
+import matplotlib.pyplot as plt
+import networkx as nx
 
 # Busca em profundidade
 def depth_first_search(graph, start, end):
     
+    G = nx.Graph()
+    teste = []
     # Create lists for open nodes and closed nodes
+    cidadePercorrida = []
     open = []
     closed = []
     # Create a start node and an goal node
     start_node = Node(start, None)
     goal_node = Node(end, None)
     # Add the start node
-    open.append(start_node)
-    
+    open.append(start_node)   
     # Loop until the open list is empty
     while len(open) > 0:
         # Get the last node (LIFO)
         current_node = open.pop(-1)
         # Add the current node to the closed list
-        closed.append(current_node)
-        
+        closed.append(current_node) 
         # Check if we have reached the goal, return the path
         if current_node == goal_node:
             path = []
@@ -44,6 +47,8 @@ def depth_first_search(graph, start, end):
             neighbor = Node(key, current_node)
             # Check if the neighbor is in the closed list
             if(neighbor in closed):
+                t = (current_node.name, neighbor.name)
+                teste.append(t)
                 continue
             # Check if neighbor is in open list and if it has a lower f value
             if(neighbor in open):
@@ -51,6 +56,30 @@ def depth_first_search(graph, start, end):
             # Calculate cost so far
             neighbor.g = current_node.g + graph.get(current_node.name, neighbor.name)
             # Everything is green, add neighbor to open list
+            
             open.append(neighbor)
+            
+            G.add_edge(current_node.name, neighbor.name)
+
+            
+    
+        pos = nx.spring_layout(G)
+        nx.draw(G, pos, font_size=16, with_labels=False)
+        
+    
+        # nodes
+        options = {"node_size": 500, "alpha": 0.8}
+        nx.draw_networkx_nodes(G, pos, nodelist=[start_node.name], node_color="g", **options)
+        if(goal_node in open):
+            nx.draw_networkx_nodes(G, pos, nodelist=[goal_node.name], node_color="b", **options)
+        
+        # nx.draw_networkx_nodes(G, pos, nodelist=teste, node_color="r", **options)
+        
+        nx.draw_networkx_edges(G, pos, edgelist=teste, width=2, alpha=0.5, edge_color="r")
+        
+        nx.draw_networkx_labels(G, pos)
+        plt.axis("off")
+        plt.show()
+        
     # Return None, no path is found
     return None

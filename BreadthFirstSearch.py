@@ -24,6 +24,7 @@ def breadth_first_search(graph, start, end):
     while len(open) > 0:
         # Get the first node (FIFO)
         current_node = open.pop(0)
+        print(current_node.name)
         # Add the current node to the closed list
         closed.append(current_node)
         
