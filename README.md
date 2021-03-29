@@ -30,20 +30,20 @@
 ### Considerando o cenario de sair de São Paulo com chegada a Rio Branco no Acre
 
 * Busca em profundidade
-![](img/Busca em profundidade.png)
-![](img/Busca em profundidade.gif)
+![](img/Buscaemprofundidade.png)
+![](img/Buscaemprofundidade.gif)
 * Busca em largura
-![](img/Busca em largura.png)
-![](img/Busca em largura.gif)
+![](img/Buscaemlargura.png)
+![](img/Buscaemlargura.gif)
 * Busca de custo uniforme
-![](img/Busca de custo uniforme.png)
-![](img/Busca de custo uniforme.gif)
+![](img/Buscadecustouniforme.png)
+![](img/Buscadecustouniforme.gif)
 * Busca gulosa
-![](img/Busca gulosa.png)
-![](img/Busca gulosa.gif)
+![](img/Buscagulosa.png)
+![](img/Buscagulosa.gif)
 * Busca A*
-![](img/Busca A.png)
-![](img/Busca A.gif)
+![](img/BuscaA.png)
+![](img/BuscaA.gif)
 
 
 ## Mantenha contato
