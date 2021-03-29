@@ -22,7 +22,7 @@
 ```
 1. git clone git@github.com:HendricksSumeck/EstrategiasDeBusca.git
 2. cd EstrategiasDeBusca
-3. python start
+3. python main.py
 ```
 
 
@@ -57,8 +57,8 @@ Hendrick Sumeck
 
 
 ## Referencias dos algoritmos
-[Busca em profundidade](https://www.annytab.com/depth-first-search-algorithm-in-python/)
-[Busca em Largura](https://www.annytab.com/breadth-first-search-algorithm-in-python/)
-[Busca de custo uniforme](https://www.annytab.com/dijkstras-search-algorithm-in-python/)
-[Busca gulosa](https://www.annytab.com/best-first-search-algorithm-in-python/)
-[Busca A](https://www.annytab.com/a-star-search-algorithm-in-python/)
+1. [Busca em profundidade](https://www.annytab.com/depth-first-search-algorithm-in-python/)
+2. [Busca em Largura](https://www.annytab.com/breadth-first-search-algorithm-in-python/)
+3. [Busca de custo uniforme](https://www.annytab.com/dijkstras-search-algorithm-in-python/)
+4. [Busca gulosa](https://www.annytab.com/best-first-search-algorithm-in-python/)
+5. [Busca A](https://www.annytab.com/a-star-search-algorithm-in-python/)
