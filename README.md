@@ -29,19 +29,19 @@
 ## Aplicativo rodando
 ### Considerando o cenario de sair de São Paulo com chegada a Rio Branco no Acre
 
-**Busca em profundidade**
+###**Busca em profundidade**
 ![](img/Buscaemprofundidade.png)
 ![](img/Buscaemprofundidade.gif)
-**Busca em largura**
+###**Busca em largura**
 ![](img/Buscaemlargura.png)
 ![](img/Buscaemlargura.gif)
-**Busca de custo uniforme**
+###**Busca de custo uniforme**
 ![](img/Buscadecustouniforme.png)
 ![](img/Buscadecustouniforme.gif)
-**Busca gulosa**
+###**Busca gulosa**
 ![](img/Buscagulosa.png)
 ![](img/Buscagulosa.gif)
-**Busca A**
+###**Busca A**
 ![](img/BuscaA.png)
 ![](img/BuscaA.gif)
 
