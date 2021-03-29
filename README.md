@@ -7,8 +7,8 @@
 ## Como instalar
 
 * Links para dowload do python
-[Anaconda](https://www.python.org/downloads/)
-[Python](https://www.anaconda.com/products/individual)
+1. [Anaconda](https://www.python.org/downloads/)
+2. [Python](https://www.anaconda.com/products/individual)
 
 * As bibliotecas Necessárias para rodar o projeto
 
@@ -28,6 +28,8 @@
 
 ## Aplicativo rodando
 ### Considerando o cenario de sair de São Paulo com chegada a Rio Branco no Acre
+
+* A primeira imagem mostra o caminho percorrido das cidades e a distancia terrestre, o gif mostra o grafo sendo plotado, os caminhos vermelhos representam os nós expandidos
 
 ### **Busca em profundidade**
 ![](img/Buscaemprofundidade.png)
