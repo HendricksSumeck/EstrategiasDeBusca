@@ -15,7 +15,8 @@ import ASearch as ae
 import time
 import timeit
 
-cidadeComeco = "SaoPaulo"
+# Cidades a serem escolhidas
+cidadeComeco = "SaoLuis"
 cidadeFim = 'RioBranco'
 
 graph, heuristics = gg.graph_generetor(cidadeFim)
