@@ -1,7 +1,7 @@
 # Estrategias de busca
 
 
-## Este foi um projeto desenvolvido a fim de resolver um problema clássico em estrategias de busca, traçar rotas entre cidades. Exercitando vario conceitos afim de encontra o melhor caminho entre duas capitais brasileiras.
+## Este foi um projeto desenvolvido de modo a resolver um problema clássico em estratégias de busca, com objetivo de traçar rotas entre cidades. Exercitando varios conceitos, de modo a encontrar o melhor caminho entre duas capitais brasileiras.
 
 
 ## Como instalar
